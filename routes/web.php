@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AgingReportController;
 use App\Http\Controllers\BalanceSheetController;
 use App\Http\Controllers\CashflowReportController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EntityPriceLogController;
 use App\Http\Controllers\FinancialActivityController;
 use App\Http\Controllers\FinancialEntityController;
@@ -16,7 +17,7 @@ use App\Http\Controllers\TransactionController;
 
 # auth
 Auth::routes();
-Route::get('/', [TransactionController::class, 'index'])->name('dashboard.index');
+Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
 
 # control centre
 Route::get('/transaction', [TransactionController::class, 'index'])->name('transactions.index');

@@ -5,6 +5,7 @@ return [
     # general
     'report'                                    => 'Report',
     'company'                                   => 'Company',
+    'dashboard'                                 => 'Dashboard',
     'cash'                                      => 'Cash',
     'cost'                                      => 'Cost',
     'from'                                      => 'from',
