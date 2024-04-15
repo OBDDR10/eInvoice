@@ -1,0 +1,291 @@
+a {
+  text-decoration: none; 
+  color: inherit;
+}
+
+a:visited {
+  color: inherit; 
+}
+
+a:focus {
+  outline: none; 
+  text-decoration: none; 
+  color: inherit; 
+}
+
+.mb-h {
+  margin-bottom: .5rem!important;
+}
+
+.mb-0 {
+  margin-bottom: 0!important;
+}
+
+.ml-1 {
+  margin-left: 1rem!important;
+}
+
+.mr-1 {
+  margin-right: 1rem!important;
+}
+
+.pb-h {
+  padding-bottom: .5rem!important;
+}
+
+.pr-1 {
+  padding-right: 1rem!important;
+}
+
+.pr-2 {
+  padding-right: 2rem!important;
+}
+
+.p-sm-btn {
+  padding: .5rem 1rem!important;
+  margin-right: .5rem!important;
+  margin-bottom: 0!important;
+  font-size: .7rem!important;
+}
+
+.text-black {
+  color: black!important;
+}
+
+.text-green {
+  color: green!important;
+}
+
+.text-red {
+  color: red!important;
+}
+
+.text-right {
+  text-align: right!important;
+}
+
+.font-weight-md {
+  font-weight: 400;
+}
+
+.form-control-date, 
+.form-control-input {
+  display: block;
+  position: relative;
+  height: 35px;
+  width: 100%;
+  padding-top: .2rem!important;
+  padding-left: .5rem!important;
+  margin-top: .1rem!important;
+  border: 1px solid black;
+  border-radius: .375rem!important;
+  color: black!important;
+}
+
+.form-control-date::after {
+  content: '\f073'; 
+  font-family: 'Font Awesome 5 Free'; 
+  font-weight: 900; 
+  position: absolute; 
+  top: 50%; 
+  right: .75rem; 
+  transform: translateY(-50%); 
+  pointer-events: none; 
+}
+
+.date-calendar-container {
+  position: relative;
+  display: inline-block; 
+  width: 100%;
+}
+
+.date-calendar-container::after {
+  content: '\f073'; 
+  font-family: 'Font Awesome 5 Free'; 
+  font-weight: 900; 
+  position: absolute; 
+  color: black;
+  top: 50%; 
+  right: .75rem; 
+  transform: translateY(-50%); 
+  pointer-events: none; 
+}
+
+.mandatory::after {
+  content: " *";
+  color: red;
+}
+
+.table-padding {
+  padding-left: 1rem!important;
+  padding-right: 1rem!important;
+}
+
+.table>:not(caption)>*>* {
+  border-color: hsla(0, 7%, 61%, 0.4)!important;
+}
+
+.table thead th {
+  padding: .45rem 1rem!important;
+}
+
+.table th, 
+.table td {
+  padding: .45rem 1rem!important;
+}
+
+.table th.sortable {
+  cursor: pointer;
+}
+
+.table th.sortable::after {
+  content: '';
+  display: inline-block;
+  margin-left: 10px;
+  margin-bottom: 1px;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 6px solid #a3a3a3;
+}
+
+.table th.sortable.active::after {
+  transform: rotate(180deg);
+}
+
+.bg-color-light-gray {
+  background-color: #e9ecef;
+}
+
+.border-white {
+  border: 1px solid white;
+}
+
+.border-dark {
+  border: 1px solid black;
+}
+
+.border-top-dark-2 {
+  border-top: 2px solid black;
+}
+
+.page-item .page-link.rounded-0 {
+  border-radius: 0!important;
+  margin: 0;
+  padding: 0;
+}
+
+.page-item .page-link.rounded-0.active {
+  color: white;
+}
+
+.page-item.active > a.page-link {
+  color: white!important;
+}
+
+.progress-bar.dark-red {
+  background-color: #8B0000!important; /* Dark Red */
+}
+
+.progress-bar.red {
+  background-color: #FF0000!important; /* Red */
+}
+
+.progress-bar.orange {
+  background-color: #FFA500!important; /* Orange */
+}
+
+.progress-bar.yellow {
+  background-color: #FFEF00!important; /* Yellow */
+}
+
+.progress-bar.green {
+  background-color: #4caf50!important; /* Green */
+}
+
+.hide-scrollbar {
+  overflow-x: auto;
+  -ms-overflow-style: none; 
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Input */
+
+input[type=number] {
+  -moz-appearance: textfield; 
+  -webkit-appearance: textfield; 
+  appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* fixed filter */
+.fixed-filter .fixed-filter-button {
+  background: #fff;
+  border-radius: 50%;
+  bottom: 30px;
+  right: 30px;
+  font-size: 1.25rem;
+  z-index: 990;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.16);
+  cursor: pointer;
+}
+
+.fixed-filter .fixed-filter-button i {
+  pointer-events: none;
+}
+
+.fixed-filter .card {
+  position: fixed !important;
+  right: -360px;
+  top: 0;
+  height: 100%;
+  left: auto !important;
+  transform: unset !important;
+  width: 360px;
+  border-radius: 0;
+  padding: 0 10px;
+  transition: .2s ease;
+  z-index: 1020;
+}
+
+.fixed-filter .badge {
+  border: 1px solid #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+  height: 23px;
+  margin-right: 5px;
+  position: relative;
+  width: 23px;
+  transition: all 0.2s ease-in-out;
+}
+
+.fixed-filter .badge:hover,
+.fixed-filter .badge.active {
+  border-color: #344767;
+}
+
+.fixed-filter .btn.bg-gradient-dark:not(:disabled):not(.disabled) {
+  border: 1px solid transparent;
+}
+
+.fixed-filter .btn.bg-gradient-dark:not(:disabled):not(.disabled):not(.active) {
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid #344767;
+  color: #344767;
+}
+
+.fixed-filter.show .card {
+  right: 0;
+}
