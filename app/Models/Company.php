@@ -12,14 +12,16 @@ class Company extends Model
 
     protected $fillable = [
         'name',
+        'registration_no',
+        'email',
+        'contact_number',
         'pic_name',
-        'pic_contact_number',
-        'checker',
-        'checker_name',
-        'checker_contact_number',
+        'address_1',
+        'address_2',
+        'address_3',
+        'bank',
         'bank_name',
-        'bank_account',
-        'remark',
+        'bank_account_no',
         'created_by',
         'updated_by',
     ];

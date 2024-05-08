@@ -8,6 +8,7 @@ use App\Models\SystemParameter;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Auth;
+use PHPUnit\Event\Telemetry\System;
 
 function status($status = null)
 {
@@ -193,22 +194,83 @@ function api_response($status = false, $message = null, $data = [], $code = null
     ], $code ? $code : ($status ? 200 : 400));
 }
 
+function getTaxRate()
+{
+    return SystemParameter::getTaxRate();
+}
+
 function getCurrencyCode() 
 {
     return SystemParameter::getCurrencyCode();
 }
 
-function generateRefNo($company_id)
-{
-    $date = date('ymd');
-    $companyId = str_pad($company_id ?? '0', 4, '0', STR_PAD_LEFT);
-    $counter = (int)SystemParameter::getRefNoCounter();
+// function generateRefNo($company_id)
+// {
+//     $date = date('ymd');
+//     $companyId = str_pad($company_id ?? '0', 4, '0', STR_PAD_LEFT);
+//     $counter = (int)SystemParameter::getRefNoCounter();
 
-    $refNo = str_pad($counter ?? '0', 6, '0', STR_PAD_LEFT);
+//     $refNo = str_pad($counter ?? '0', 6, '0', STR_PAD_LEFT);
+//     $next_counter = (int)$counter + 1;
+//     SystemParameter::updateRefNoCounter($next_counter);
+
+//     return (string)"$date$companyId$refNo";
+// }
+
+function generateRefNo($company_name)
+{
+    // $date = date('ymd');
+    // $counter = (int)SystemParameter::getRefNoCounter();
+    // $words = explode(' ', $company_name);
+    // $initials = '';
+
+    // foreach ($words as $word) {
+    //     $initials .= strtoupper(substr($word, 0, 1));
+    // }
+
+    // $refNo = str_pad($counter ?? '0', 6, '0', STR_PAD_LEFT);
+    // $next_counter = (int)$counter + 1;
+
+    // if ($next_counter >= 9999)
+    // {
+    //     $next_counter = 1000;
+    // }
+
+    $counter = (int)SystemParameter::getRefNoCounter();
+    $refNo = str_pad($counter ?? '0', 8, '0', STR_PAD_LEFT);
     $next_counter = (int)$counter + 1;
+
     SystemParameter::updateRefNoCounter($next_counter);
 
-    return (string)"$date$companyId$refNo";
+    //return (string)"$initials$date$refNo";
+    return (string)"$refNo";
+}
+
+function generateQuotationNo($company_name)
+{
+    // $date = date('ymd');
+    // $counter = (int)SystemParameter::getRefNoCounter();
+    // $words = explode(' ', $company_name);
+    // $initials = '';
+
+    // foreach ($words as $word) {
+    //     $initials .= strtoupper(substr($word, 0, 1));
+    // }
+
+    // $refNo = str_pad($counter ?? '0', 6, '0', STR_PAD_LEFT);
+    // $next_counter = (int)$counter + 1;
+
+    // if ($next_counter >= 9999)
+    // {
+    //     $next_counter = 1000;
+    // }
+
+    $counter = (int)SystemParameter::getRefNoCounter();
+    $refNo = str_pad($counter ?? '0', 8, '0', STR_PAD_LEFT);
+    $next_counter = (int)$counter + 1;
+
+    //return (string)"$initials$date$refNo";
+    return (string)"QT$refNo";
 }
 
 function getCompanies()

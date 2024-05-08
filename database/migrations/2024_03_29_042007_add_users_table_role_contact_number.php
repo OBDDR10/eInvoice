@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->string('role')->default('user')->after('name');
             $table->string('contact_number')->nullable()->after('password');
+            $table->unsignedInteger('status')->nullable(false)->default(1)->unsigned()->after('remember_token');
+            $table->softDeletes();
         });
     }
 
@@ -25,6 +27,8 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('role');
             $table->dropColumn('contact_number');
+            $table->dropColumn('status');
+            $table->dropColumn('deleted_at');
         });
     }
 };

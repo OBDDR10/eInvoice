@@ -41,9 +41,9 @@ function changePage(page) {
 /* Filter */
 function getQueryParams(sorting = null) {
   let queryParams = new URLSearchParams(window.location.search);
-  queryParams.set('company_id', $("#company_id").val());
-  queryParams.set('start_date', $("#start_date").val());
-  queryParams.set('end_date', $("#end_date").val());
+  // queryParams.set('company_id', $("#company_id").val());
+  // queryParams.set('start_date', $("#start_date").val());
+  // queryParams.set('end_date', $("#end_date").val());
 
   if (sorting)
   {
@@ -71,6 +71,15 @@ function onSorting(obj) {
   }
 
   return { sortBy: sortBy, sortDir: sortDir };
+}
+
+/* Loading */
+function startLoading() {
+  document.getElementById('loading').style.display = 'block';
+}
+
+function stopLoading() {
+  document.getElementById('loading').style.display = 'none';
 }
 
 /* Fixed Filter */

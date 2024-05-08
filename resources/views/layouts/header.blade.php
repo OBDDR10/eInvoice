@@ -1,7 +1,7 @@
 @include('layouts.filter') 
 @include('layouts.settings') 
 
-<nav class="navbar navbar-main navbar-expand-lg px-0 mx-2 shadow-none border-radius-xl" id="navbarBlur" data-scroll="true">
+<!-- <nav class="navbar navbar-main navbar-expand-lg px-0 mx-2 shadow-none border-radius-xl" id="navbarBlur" data-scroll="true">
   <div class="container-fluid py-0 pt-1">
     <div class="card mr-1 w-100" style="border-radius: .5rem!important;">
       <div class="card-body px-0 pb-2 table-padding" style="padding-top: .5rem!important; padding-bottom: .25rem!important;">
@@ -82,4 +82,4 @@
       </div>
     </div>
   </div>
-</nav>
+</nav> -->

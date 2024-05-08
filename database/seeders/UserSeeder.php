@@ -2,28 +2,36 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-use Illuminate\Contracts\Hashing\Hasher;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class UserSeeder extends Seeder
 {
-    public function __construct(
-        protected Hasher $hash
-    )
-    {}
-
+    /**
+     * Run the database seeds.
+     */
     public function run(): void
     {
-        $users = [
-            [
-                'name' => 'test',
-                'email' => 'user@test.com',
-                'password' => $this->hash->make('password'),
-            ]
-        ];
-        foreach ($users as $user) {
-            User::create($user);
-        }
+        $now = Carbon::now();
+
+        DB::table('users')->insert([
+            'name' => 'Dareus Liew',
+            'email' => 'liew@oceantech.asia',
+            'password' => bcrypt('Ocean1234@@'),
+            'role' => 'user',
+            'created_at' => $now,
+            'updated_at' => $now
+        ]);
+
+        DB::table('users')->insert([
+            'name' => 'Dareus Liew',
+            'email' => 'dareusliew1998@gmail.com',
+            'password' => bcrypt('Ocean1234@@'),
+            'role' => 'admin',
+            'created_at' => $now,
+            'updated_at' => $now
+        ]);
     }
 }

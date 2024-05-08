@@ -29,6 +29,10 @@ a:focus {
   margin-right: 1rem!important;
 }
 
+.pt-h {
+  padding-top: .5rem!important;
+}
+
 .pb-h {
   padding-bottom: .5rem!important;
 }
@@ -152,6 +156,14 @@ a:focus {
 
 .table th.sortable.active::after {
   transform: rotate(180deg);
+}
+
+.table-input {
+  padding: 0 5px;
+  margin: 0!important;
+  width: 100%;
+  font-size: 15px;
+  border: 1px solid grey;
 }
 
 .bg-color-light-gray {
@@ -288,4 +300,37 @@ input[type=number]::-webkit-outer-spin-button {
 
 .fixed-filter.show .card {
   right: 0;
+}
+
+.modal {
+  z-index: 10000!important;
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  z-index: 9999; /* Ensure it's on top of other elements */
+  display: none; /* Initially hidden */
+}
+
+.loading-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 4px solid #f3f3f3; /* Light grey border */
+  border-top: 4px solid #e91e63; /* Blue border on top */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite; /* Spin animation */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
